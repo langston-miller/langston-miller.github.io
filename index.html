@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="__title">Langston Gavin Miller</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,450;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="wrap nav-row">
+    <div class="mark"><span class="dot">●</span><span>Langston Miller</span></div>
+    <nav class="links">
+      <a href="#work" data-i18n="nav.work">Work</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#experience" data-i18n="nav.experience">Experience</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="controls">
+      <div class="lang-toggle" role="group" aria-label="Language"> 
+        <!-- === To do: Make this a dropdown. === -->
+        <button id="lang-en" type="button" aria-pressed="true">EN</button>
+        <button id="lang-fr" type="button" aria-pressed="false">FR</button>
+      </div>
+      <button class="pill-btn icon-toggle" id="theme-toggle" type="button">
+        <svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+        <span id="theme-label" data-i18n="nav.dark">Dark</span>
+      </button>
+    </div>
+  </div>
+</header>
+<main>
+  <!-- ============ "NEW SUPER" HERO PAGE ============ -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow mono" data-i18n="hero.eyebrow">Virginia State University · Computer Science</p>
+      <h1 data-i18n="hero.title">Computer science student, <em>showing up for his community.</em></h1>
+      <p class="lede" data-i18n="hero.lede">I'm based in Manassas, Virginia, studying computer science while staying active in volunteer and leadership work. This page is where my projects will live as I build them.</p>
+      <div class="hero-actions">
+        <a href="#work" class="btn-primary" data-i18n="hero.cta1">See my work</a>
+        <a href="#contact" class="btn-ghost" data-i18n="hero.cta2">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WORKS (WORK IT OUT! WORK IT OUT!) ============ -->
+  <section class="section" id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 data-i18n="works.heading">Projects</h2>
+        <span class="section-tag mono" data-i18n="works.tag">In progress...</span>
+      </div>
+
+      <div class="works-grid" id="works-grid"><!-- plates injected by JS --></div>
+
+      <p class="works-note" data-i18n="works.note">Nothing's posted yet.<br>However, you may check back as coursework and personal builds get finished.</p>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ME ============ -->
+  <section class="section" id="about">
+    <div class="wrap about-grid">
+      <div>
+        <div class="section-head" style="margin-bottom:24px;">
+          <h2 data-i18n="about.heading">About</h2>
+        </div>
+        <p data-i18n="about.p1">I'm a computer science student at Virginia State University, originally from Manassas, Virginia. Alongside coursework, I've spent years volunteering with my local church and taking part in leadership programs that put real-world skills into practice.</p>
+        <p data-i18n="about.p2">I'm just getting started on the technical side — this site will grow as I take on more projects, internships, and coursework I'm proud to share.</p>
+      </div>
+      <div class="facts">
+        <dl>
+          <div class="fact-row"><dt data-i18n="about.fact1k">Based in</dt><dd data-i18n="about.fact1v">Manassas, Virginia</dd></div>
+          <div class="fact-row"><dt data-i18n="about.fact2k">Studying</dt><dd data-i18n="about.fact2v">Computer Science, Virginia State University</dd></div>
+          <div class="fact-row"><dt data-i18n="about.fact3k">Previously</dt><dd data-i18n="about.fact3v">Osbourn Park High School</dd></div>
+          <div class="fact-row"><dt data-i18n="about.fact4k">Skills</dt><dd data-i18n="about.fact4v">Creativity, Leadership, Organization, Teamwork</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE & EDUCATION ============ -->
+  <section class="section" id="experience">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 data-i18n="experience.heading">Experience &amp; education</h2>
+        <span class="section-tag mono" data-i18n="experience.tag">2020 — Current</span>
+      </div>
+
+      <div class="exped-grid">
+        <div class="exped-col">
+          <h3 class="exped-label mono" data-i18n="experience.colExperience">Experience</h3>
+
+          <div class="exped-row">
+            <span class="exped-years mono">2020 – <span data-i18n="experience.current">Current</span></span>
+            <div>
+              <p class="exped-title" data-i18n="experience.role1Title">Volunteer, Grace Loves</p>
+              <p class="exped-org mono" data-i18n="experience.role1Org">Grace Covenant Church</p>
+              <p class="exped-desc" data-i18n="experience.role1Desc">Serve meals for low-income families, organize school-supply drives, and help set up community events.</p>
+            </div>
+          </div>
+
+          <div class="exped-row">
+            <span class="exped-years mono">2024 – 2026</span>
+            <div>
+              <p class="exped-title" data-i18n="experience.role2Title">Member</p>
+              <p class="exped-org mono" data-i18n="experience.role2Org">Jack and Jill Corp.</p>
+              <p class="exped-desc" data-i18n="experience.role2Desc">Took part in workshops simulating real-world scenarios, building life and leadership skills.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="exped-col">
+          <h3 class="exped-label mono" data-i18n="experience.colEducation">Education</h3>
+
+          <div class="exped-row">
+            <span class="exped-years mono">2026 – <span data-i18n="experience.current">Current</span></span>
+            <div>
+              <p class="exped-title" data-i18n="experience.edu1Title">Computer Science</p>
+              <p class="exped-org mono" data-i18n="experience.edu1Org">Virginia State University</p>
+            </div>
+          </div>
+
+          <div class="exped-row">
+            <span class="exped-years mono">2022 – 2026</span>
+            <div>
+              <p class="exped-title" data-i18n="experience.edu2Title">Advanced Studies</p>
+              <p class="exped-org mono" data-i18n="experience.edu2Org">Osbourn Park High School</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-row">
+        <span class="exped-label mono" data-i18n="experience.skillsLabel">Skills</span>
+        <div class="skills-chips" id="skills-chips"><!-- chips injected by JS --></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section" id="contact">
+    <div class="wrap contact">
+      <h2 data-i18n="contact.heading">Open to internships and project opportunities.</h2>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:langgavmiller@hotmail.com" data-i18n="contact.cta">langgavmiller@hotmail.com →</a>
+        <a class="contact-link contact-link-secondary" href="tel:+17038511886" data-i18n="contact.tele">(703)851-1886</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:12px;">
+    <span data-i18n="footer.rights">© ???? Langston Gavin Miller</span>
+    <span data-i18n="footer.built">HTML & JS</span>
+  </div>
+</footer>
+<script src="index.js"></script>
+</body>
+</html>
