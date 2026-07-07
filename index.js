@@ -14,8 +14,8 @@ Created by Langston Gavin Miller
       "hero.title":'Computer science student, <em>showing up for his community.</em>',
       "hero.lede":"I&#x2019;m based in Manassas, Virginia, studying computer science while staying active in volunteer and leadership work. This page is where my projects will live as I build them.",
       "hero.cta1":"See my work", "hero.cta2":"Get in touch",
-      "works.heading":"Projects", "works.tag":"In progress: 6 slots open",
-      "works.note":"Nothing&#x2019;s posted yet.<br>However, you may check back as coursework and personal builds get finished.",
+      "works.heading":"Projects", "works.tag":"Works: 10 slot(s)",
+      "works.note":"Each space above is reserved for a project. Check back soon, as I continue my courses and personal achievements.", 
       "works.placeholder":"Untitled", "works.reserved":"Coming soon",
       "about.heading":"About",
       "about.p1":"I&#x2019;m a computer science student at Virginia State University, originally from Manassas, Virginia. Alongside coursework, I&#x2019;ve spent years volunteering with my local church and taking part in leadership programs that put real-world skills into practice.",
@@ -42,7 +42,8 @@ Created by Langston Gavin Miller
       "contact.tele":"(703)851-1886",
       "footer.rights":"© {date.fullYear} Langston Gavin Miller.",
       "footer.built":"Powered by HTML and Javascript",
-      "project1": "",
+      "works.1": "Game: The Game",
+      "works.1.desc": "The Best Game Ever Made. A game about a game that is a game. The game is the best game ever made.",
     },
     fr: {
       "__title": "Langston Gavin Miller - Étudiant d'informatique",
@@ -51,8 +52,8 @@ Created by Langston Gavin Miller
       "hero.title":'Étudiant en informatique, <em>engagé pour sa communauté.</em>',
       "hero.lede":"Je vis à Manassas, en Virginie, où j&#x2019;étudie l&#x2019;informatique tout en restant actif dans le bénévolat et le leadership. Cette page accueillera mes projets au fur et à mesure que je les réalise.",
       "hero.cta1":"Voir mes travaux", "hero.cta2":"Me contacter",
-      "works.heading":"Projets", "works.tag":"En cours : 6 emplacements",
-      "works.note":"Rien n&#x2019;est encore publié. Chaque emplacement ci-dessus est réservé à un projet — revenez bientôt, au fil de mes cours et de mes réalisations personnelles.",
+      "works.heading":"Projets", "works.tag":"En cours : 10 emplacement(s)",
+      "works.note": "Chaque espace ci-dessus est réservé à un projet. Revenez bientôt pour suivre l'évolution de mes cours et de mes réalisations personnelles.",
       "works.placeholder":"Sans titre", "works.reserved":"Bientôt",
       "about.heading":"À propos",
       "about.p1":"Je suis étudiant en informatique à Virginia State University, originaire de Manassas, en Virginie. En parallèle de mes études, je suis bénévole depuis plusieurs années dans mon église et je participe à des programmes de leadership qui mettent en pratique des compétences concrètes.",
@@ -79,7 +80,8 @@ Created by Langston Gavin Miller
       "contact.tele":"+17038511886",
       "footer.rights":"© {date.fullYear} Langston Gavin Miller.",
       "footer.built":"Composé en HTML et Javascript",
-      "project1": "",
+      "works.1": "Jeu le Jeu",
+      "works.1.desc": "Le meilleur jeu jamais créé. Un jeu sur un jeu qui est un jeu. Le jeu est le meilleur jeu jamais créé.",
     }
   };
 
@@ -91,8 +93,8 @@ Created by Langston Gavin Miller
       // Fetch the localization string from the table.
       const key = el.getAttribute("data-i18n");
       var value = translations[lang][key];
-      if (value == undefined) {
-        value = "MISSING.LOCSTRING." + key
+      if (!value) {
+        value = "MISSINGLOCSTR." + key
       }
       
       // Let's import the date so I don't have to make an update called: "Update Copyright Year" every year.
@@ -148,15 +150,19 @@ Created by Langston Gavin Miller
   function buildWorks(lang){
     const grid = document.getElementById("works-grid");
     grid.innerHTML = "";
-    for (let i = 1; i <= 6; i++){
+    for (let i = 1; i <= 10; i++){
       const num = String(i).padStart(3, "0");
       const plate = document.createElement("div");
+
+      const titleText = translations[lang]["works." + i] || translations[lang]["works.placeholder"];
+      const statusText = translations[lang]["works." + i + ".desc"]|| translations[lang]["works.reserved"];
+
       plate.className = "plate";
       plate.innerHTML =
         '<span class="plate-num mono">' + num + '</span>' +
         '<div class="plate-body">' + plateIcon +
-          '<span class="plate-title">' + translations[lang]["works.placeholder"] + '</span>' +
-          '<span class="plate-status">' + translations[lang]["works.reserved"] + '</span>' +
+          '<span class="plate-title">' + titleText + '</span>' +
+          '<span class="plate-status">' + statusText+ '</span>' +
         '</div>';
       grid.appendChild(plate);
     }
