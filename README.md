@@ -1,5 +1,7 @@
 # Langston Miller - Personal Website 🌐
 
+Last Updated: July 7th, 2026
+
 ## About
 Welcome to my personal website! This project was created in my STEP 2026 program using generative AI to assist within the creation process. 
 
