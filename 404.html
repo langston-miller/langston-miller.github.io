@@ -1,15 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-i18n="__title">Langston Gavin Miller - 404</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,450;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="__title">Langston Gavin Miller - 404</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,450;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <script src="__404.js"></script>
-    <div style="text-align: center; padding: 3.5em;"><strong class ="error" style="font-size: 9em;" onclick="ofFour()">404</strong><br><a style="font-size: 1.5em;" href="index.html">Go back?</a><div>
-</body>
+    <header>
+    <div class="wrap nav-row">
+        <div class="mark"><span class="dot">●</span><span>Langston Miller</span></div>
+        <nav class="links">
+        <a href="index.html#work" data-i18n="nav.work">Work</a>
+        <a href="index.html#about" data-i18n="nav.about">About</a>
+        <a href="index.html#experience" data-i18n="nav.experience">Experience</a>
+        <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+        </nav>
+        <div class="controls">
+        <div class="lang-toggle" role="group" aria-label="Language"> 
+            <!-- === To do: Make this a dropdown. === -->
+            <button id="lang-en" type="button" aria-pressed="true">EN</button>
+            <button id="lang-fr" type="button" aria-pressed="false">FR</button>
+        </div>
+        <button class="pill-btn icon-toggle" id="theme-toggle" type="button">
+            <svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+            <span id="theme-label" data-i18n="nav.dark">Dark</span>
+        </button>
+        </div>
+    </div>
+    </header>
+    <script src="scripts/__404.js"></script>
+    <script src="scripts/index.js"></script>
+    <div style="text-align: center; padding: 3.5em;"><strong style="font-size: 9em;">404</strong><br><a id="error" style="font-size: 1.5em;" href="index.html">Go back?</a><div><br><br>
+        <footer>
+            <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:12px;">
+                <span data-i18n="footer.rights">© ???? Langston Gavin Miller</span>
+                <span data-i18n="footer.built">HTML & JS</span>
+            </div>
+        </footer>
+    </body>

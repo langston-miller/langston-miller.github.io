@@ -12,4 +12,4 @@ Welcome to my personal website! This project was created in my STEP 2026 program
 
 ### Media
 Here's a preview image of my website:
-![Website Image](website.png)
+![Website Image](media/website.png)

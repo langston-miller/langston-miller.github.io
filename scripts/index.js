@@ -42,8 +42,8 @@ Created by Langston Gavin Miller
       "contact.tele":"(703)851-1886",
       "footer.rights":"© {date.fullYear} Langston Gavin Miller.",
       "footer.built":"Powered by HTML and Javascript",
-      "works.1": "Game: The Game",
-      "works.1.desc": "The Best Game Ever Made. A game about a game that is a game. The game is the best game ever made.",
+      "works.1": "Slopway Trains",
+      "works.1.desc": "A train avoidance game",
     },
     fr: {
       "__title": "Langston Gavin Miller - Étudiant d'informatique",
@@ -80,8 +80,8 @@ Created by Langston Gavin Miller
       "contact.tele":"+17038511886",
       "footer.rights":"© {date.fullYear} Langston Gavin Miller.",
       "footer.built":"Composé en HTML et Javascript",
-      "works.1": "Jeu le Jeu",
-      "works.1.desc": "Le meilleur jeu jamais créé. Un jeu sur un jeu qui est un jeu. Le jeu est le meilleur jeu jamais créé.",
+      "works.1": "Trains de Slopway",
+      "works.1.desc": "Un jeu d'esquive de trains",
     }
   };
 
