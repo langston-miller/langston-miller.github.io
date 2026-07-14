@@ -149,35 +149,41 @@ Created by Langston Gavin Miller
 
   function buildWorks(lang){
     const grid = document.getElementById("works-grid");
-    grid.innerHTML = "";
-    for (let i = 1; i <= 10; i++){
-      const num = String(i).padStart(3, "0");
-      const plate = document.createElement("div");
 
-      const titleText = translations[lang]["works." + i] || translations[lang]["works.placeholder"];
-      const statusText = translations[lang]["works." + i + ".desc"]|| translations[lang]["works.reserved"];
+    if (!!grid) {
+      grid.innerHTML = "";
+      for (let i = 1; i <= 10; i++){
+        const num = String(i).padStart(3, "0");
+        const plate = document.createElement("div");
 
-      plate.className = "plate";
-      plate.innerHTML =
-        '<span class="plate-num mono">' + num + '</span>' +
-        '<div class="plate-body">' + plateIcon +
-          '<span class="plate-title">' + titleText + '</span>' +
-          '<span class="plate-status">' + statusText+ '</span>' +
-        '</div>';
-      grid.appendChild(plate);
+        const titleText = translations[lang]["works." + i] || translations[lang]["works.placeholder"];
+        const statusText = translations[lang]["works." + i + ".desc"]|| translations[lang]["works.reserved"];
+
+        plate.className = "plate";
+        plate.innerHTML =
+          '<span class="plate-num mono">' + num + '</span>' +
+          '<div class="plate-body">' + plateIcon +
+            '<span class="plate-title">' + titleText + '</span>' +
+            '<span class="plate-status">' + statusText+ '</span>' +
+          '</div>';
+        grid.appendChild(plate);
+      }
     }
   }
 
   /* ============ SKILLS CHIPS ============ */
   function buildSkills(lang){
     const wrap = document.getElementById("skills-chips");
-    wrap.innerHTML = "";
-    translations[lang]["skills.list"].split(",").forEach(function(skill){
-      const chip = document.createElement("span");
-      chip.className = "skill-chip";
-      chip.textContent = skill;
-      wrap.appendChild(chip);
-    });
+
+    if (!!wrap) {
+      wrap.innerHTML = "";
+      translations[lang]["skills.list"].split(",").forEach(function(skill){
+        const chip = document.createElement("span");
+        chip.className = "skill-chip";
+        chip.textContent = skill;
+        wrap.appendChild(chip);
+      });
+    }
   }
 
   applyTheme();

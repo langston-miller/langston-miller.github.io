@@ -28,5 +28,9 @@ const strings = {
 };
 
 setTimeout(function () {
-    document.getElementById("error").innerHTML = strings[Math.floor(Math.random() * (strings.en.length - 1))];
-}, 3);
+    var errorQuotes = strings.en;
+    let idx = Math.floor(Math.random() * (errorQuotes.length - 1));
+    let selectedString = errorQuotes[idx];
+
+    document.getElementById("error").innerHTML = selectedString;
+}, 5);
