@@ -40,7 +40,7 @@ Created by Langston Gavin Miller
       "contact.heading":"Open to internships and project opportunities.",
       "contact.cta":"langgavmiller@hotmail.com →",
       "contact.tele":"(703)851-1886",
-      "footer.rights":"© {date.fullYear} Langston Gavin Miller.",
+      "footer.rights":"© {date.copyYear} Langston Gavin Miller.",
       "footer.built":"Powered by HTML and Javascript",
       "works.1": "Slopway Trains",
       "works.1.desc": "A train avoidance game",
@@ -78,7 +78,7 @@ Created by Langston Gavin Miller
       "contact.heading":"Ouvert aux stages et aux opportunités de projets.",
       "contact.cta":"langgavmiller@hotmail.com →",
       "contact.tele":"+17038511886",
-      "footer.rights":"© {date.fullYear} Langston Gavin Miller.",
+      "footer.rights":"© {date.copyYear} Langston Gavin Miller.",
       "footer.built":"Composé en HTML et Javascript",
       "works.1": "Trains de Slopway",
       "works.1.desc": "Un jeu d'esquive de trains",
@@ -99,15 +99,19 @@ Created by Langston Gavin Miller
       
       // Let's import the date so I don't have to make an update called: "Update Copyright Year" every year.
       var _DT = new Date();
-      value = value.replaceAll("{date.fullYear}", _DT.getFullYear());
+      let year = _DT.getFullYear();
+
+      value = value.replaceAll("{date.fullYear}", year);
+      value = value.replaceAll("{date.copyYear}", (year !== 2026 ? "2026 - " :  "") + year);
 
       // Then, let's set the final value of the string.
       el.innerHTML = value;
     });
+
     document.getElementById("lang-en").setAttribute("aria-pressed", lang === "en");
     document.getElementById("lang-fr").setAttribute("aria-pressed", lang === "fr");
-    document.getElementById("theme-label").textContent = isDark
-      ? translations[lang]["nav.light"] : translations[lang]["nav.dark"];
+    document.getElementById("theme-label").textContent = isDark ? translations[lang]["nav.light"] : translations[lang]["nav.dark"];
+    
     buildWorks(lang);
     buildSkills(lang);
   }
@@ -117,10 +121,12 @@ Created by Langston Gavin Miller
     applyTranslations(currentLang);
   }, 3);
 
+  // Lang Codes use 2 characters. examples: en = English, fr = French, de = German, ja = Japanese
   document.getElementById("lang-en").addEventListener("click", function(){
     currentLang = "en"; 
     applyTranslations("en");
   });
+
   document.getElementById("lang-fr").addEventListener("click", function(){
     currentLang = "fr"; 
     applyTranslations("fr");
@@ -144,8 +150,23 @@ Created by Langston Gavin Miller
     applyTheme();
   });
 
-  /* ============ WORKS PLACEHOLDERS ============ */
-  const plateIcon = '<svg class="plate-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="1"></rect><path d="M3 15l5-5 4 4 5-6 4 5"></path></svg>';
+  /* ============ WORKS ============ */
+
+  /* 
+  ============ WORKS DATA ============
+     Fill in a project below to activate its card.
+     - image: path to a photo/screenshot (e.g. "images/project-01.jpg"), or null to keep the placeholder look
+     - link: optional URL to open when the card is clicked, or null
+     Leave an entry exactly as { image: null, link: null } to keep it a reserved placeholder.
+  =================================== */
+  const projectMeta = [
+    {image: "media/projects/project1.png", link: "https://langston-miller.github.io/SlopwayTrainsGame/"},
+    //{image: null, link: null}, // TEMPLATE
+  ];
+
+
+  let plateIcon_default = '<svg class="plate-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="1"></rect><path d="M3 15l5-5 4 4 5-6 4 5"></path></svg>';
+  let plateIcon;
 
   function buildWorks(lang){
     const grid = document.getElementById("works-grid");
@@ -154,18 +175,31 @@ Created by Langston Gavin Miller
       grid.innerHTML = "";
       for (let i = 1; i <= 10; i++){
         const num = String(i).padStart(3, "0");
-        const plate = document.createElement("div");
+        const meta = projectMeta[i - 1];
+        const hasImage = !!(meta && meta.image);
+
+        const plate = document.createElement(hasImage && meta.link ? "a" : "div");
+        if (hasImage && meta.link) plate.href = meta.link;
 
         const titleText = translations[lang]["works." + i] || translations[lang]["works.placeholder"];
-        const statusText = translations[lang]["works." + i + ".desc"]|| translations[lang]["works.reserved"];
+        const statusText = translations[lang]["works." + i + ".desc"] || translations[lang]["works.reserved"];
 
-        plate.className = "plate";
-        plate.innerHTML =
+        plate.className = hasImage ? "plate has-image" : "plate";
+
+        if (hasImage){
+          plate.style.backgroundImage = 'url("' + meta.image + '")';
+          plateIcon = "";
+        } else {
+          plateIcon = plateIcon_default;
+        }
+
+        plate.innerHTML = 
           '<span class="plate-num mono">' + num + '</span>' +
           '<div class="plate-body">' + plateIcon +
             '<span class="plate-title">' + titleText + '</span>' +
-            '<span class="plate-status">' + statusText+ '</span>' +
+            '<span class="plate-status">' + statusText + '</span>' +
           '</div>';
+
         grid.appendChild(plate);
       }
     }
