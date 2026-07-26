@@ -22,15 +22,31 @@ const strings = {
         "La fin du route ?",
         "La fin ?",
         "Quitter ?",
-        "Non 404 ?",
         "Retour ?",
+        "Non 404 ?",
     ],
 };
 
-setTimeout(function () {
-    var errorQuotes = strings.en;
-    let idx = Math.floor(Math.random() * (errorQuotes.length - 1));
-    let selectedString = errorQuotes[idx];
+var currentLang = "en";
+
+function errQuoteGen(lang) {
+    let errorQuotes = strings[lang || "en"];
+    const idx = Math.floor(Math.random() * (errorQuotes.length - 1));
+    const selectedString = errorQuotes[idx];
 
     document.getElementById("error").innerHTML = selectedString;
-}, 5);
+}
+
+setTimeout(function () {
+    errQuoteGen(currentLang);
+}, 4);
+
+document.getElementById("lang-en").addEventListener("click", function(){
+    currentLang = "en"; 
+    errQuoteGen(currentLang);
+});
+
+  document.getElementById("lang-fr").addEventListener("click", function(){
+    currentLang = "fr"; 
+    errQuoteGen(currentLang);
+  });
