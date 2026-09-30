@@ -43,7 +43,7 @@ Created by Langston Gavin Miller
       "footer.rights":"© {date.copyYear} Langston Gavin Miller.",
       "footer.built":"Powered by HTML and Javascript",
       "works.1": "Slopway Trains",
-      "works.1.desc": "A train avoidance game",
+      "works.1.desc": "A train avoidance game", 
     },
     fr: {
       "__title": "Langston Gavin Miller - Étudiant d'informatique",
