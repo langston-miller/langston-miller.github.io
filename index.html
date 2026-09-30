@@ -25,10 +25,11 @@
       <a href="#contact" data-i18n="nav.contact">Contact</a>
     </nav>
     <div class="controls">
-      <div class="lang-toggle" role="group" aria-label="Language"> 
-        <!-- === To do: Make this a dropdown. === -->
-        <button id="lang-en" type="button" aria-pressed="true">EN</button>
-        <button id="lang-fr" type="button" aria-pressed="false">FR</button>
+      <div class="lang-select-wrap">
+        <select id="lang-select" aria-label="Language">
+          <option value="en">EN — English</option>
+          <option value="fr">FR — Français</option>
+        </select>
       </div>
       <button class="pill-btn icon-toggle" id="theme-toggle" type="button">
         <svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
@@ -38,7 +39,7 @@
   </div>
 </header>
 <main>
-  <!-- ============ "NEW SUPER" HERO PAGE ============ -->
+  <!-- ============ HERO ============ -->
   <section class="hero">
     <div class="wrap">
       <p class="eyebrow mono" data-i18n="hero.eyebrow">Virginia State University · Computer Science</p>
@@ -48,20 +49,6 @@
         <a href="#work" class="btn-primary" data-i18n="hero.cta1">See my work</a>
         <a href="#contact" class="btn-ghost" data-i18n="hero.cta2">Get in touch</a>
       </div>
-    </div>
-  </section>
-
-  <!-- ============ WORKS (WORK IT OUT! WORK IT OUT!) ============ -->
-  <section class="section" id="work">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 data-i18n="works.heading">Projects</h2>
-        <span class="section-tag mono" data-i18n="works.tag">In progress...</span>
-      </div>
-
-      <div class="works-grid" id="works-grid"><!-- plates injected by JS --></div>
-
-      <p class="works-note" data-i18n="works.note">Nothing's posted yet.<br>However, you may check back as coursework and personal builds get finished.</p>
     </div>
   </section>
 
@@ -142,6 +129,25 @@
         <span class="exped-label mono" data-i18n="experience.skillsLabel">Skills</span>
         <div class="skills-chips" id="skills-chips"><!-- chips injected by JS --></div>
       </div>
+    </div>
+  </section>
+
+  <!-- ============ NEW AERO HORIZONTAL PROJECTS GALLERY ============ -->
+  <section class="section" id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 data-i18n="works.heading">Projects</h2>
+        <span class="section-tag mono" data-i18n="works.tag">In progress...</span>
+      </div>
+
+      <!-- Scrollable New Aero Gallery Container -->
+      <div class="scrolling-gallery-wrapper">
+        <div class="scrolling-gallery" id="works-grid">
+          <!-- Cards populated dynamically by JS -->
+        </div>
+      </div>
+
+      <p class="works-note" data-i18n="works.note">Nothing's posted yet.<br>However, you may check back as coursework and personal builds get finished.</p>
     </div>
   </section>
 
